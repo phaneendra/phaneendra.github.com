@@ -1,5 +1,5 @@
 {
-  "name": "@academic-next/web",
+  "name": "@phanee.tk/personal-blog",
   "version": "1.0.0",
   "description": "A template for creating a static website blog using Next.js and MDX",
   "scripts": {
