@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Navbar from "../src/components/Navbar/Navbar"
-import ResetCss from "../src/components/resetCSS"
-import SEO from "../src/components/seo"
-import NotFound from "../src/containers/NotFound"
-import Footer from "../src/components/Footer/Footer"
+import React from "react";
+import { graphql } from "gatsby";
+import Navbar from "../src/components/Navbar/Navbar";
+import ResetCss from "../src/components/resetCSS";
+import SEO from "../src/components/seo";
+import NotFound from "../src/containers/NotFound";
+import Footer from "../src/components/Footer/Footer";
 
 const NotFoundPage = (props: any) => {
   return (
@@ -18,10 +18,10 @@ const NotFoundPage = (props: any) => {
         <a href="https://redq.io/"> RedQ, Inc.</a>
       </Footer>
     </>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
 export const pageQuery = graphql`
   query {
@@ -31,4 +31,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
