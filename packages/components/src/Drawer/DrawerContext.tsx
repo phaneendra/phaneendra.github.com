@@ -1,15 +1,15 @@
-import React, { useReducer } from 'react';
+import React, { useReducer } from "react";
 
 const initialState = {
-  isOpen: false,
+  isOpen: false
 };
 
 function reducer(state: any, action: any) {
   switch (action.type) {
-    case 'TOGGLE':
+    case "TOGGLE":
       return {
         ...state,
-        isOpen: !state.isOpen,
+        isOpen: !state.isOpen
       };
     default:
       return state;
@@ -22,7 +22,7 @@ type DrawerProviderProps = {
 };
 
 export const DrawerProvider: React.FunctionComponent<DrawerProviderProps> = ({
-  children,
+  children
 }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (

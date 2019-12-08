@@ -1,9 +1,9 @@
-import * as React from "react"
-import PersonalBlogWrapper from "./style"
-import Intro from "./Intro"
-import Posts from "./Posts"
+import * as React from "react";
+import PersonalBlogWrapper from "./style";
+import Intro from "./Intro";
+import Posts from "./Posts";
 
-type PersonalBlogProps = {}
+type PersonalBlogProps = {};
 
 const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({
   ...props
@@ -13,7 +13,7 @@ const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({
       <Intro />
       <Posts />
     </PersonalBlogWrapper>
-  )
-}
+  );
+};
 
-export default PersonalBlog
+export default PersonalBlog;

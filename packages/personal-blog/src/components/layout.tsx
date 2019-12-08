@@ -5,8 +5,8 @@ import ScrollToTop from "react-scroll-up";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import ScrollUpButton from "./ScrollUpButton/ScrollUpButton";
-import ResetCss from "./resetCSS";
-import { theme } from "../theme";
+import ResetCss from "./App/resetCSS";
+import { theme } from "@theme";
 
 type LayoutProps = {
   children: React.ReactNode;

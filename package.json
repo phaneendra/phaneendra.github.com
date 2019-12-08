@@ -1,5 +1,5 @@
 {
-  "name": "phaneendra",
+  "name": "@phanee.tk/main",
   "private": true,
   "description": "",
   "version": "1.3.0",
@@ -20,6 +20,11 @@
     "personal-dev": "cd packages/personal-blog-gatsby && gatsby develop",
     "personal-build": "cd packages/personal-blog-gatsby && gatsby build",
     "personal-serve": "cd packages/personal-blog-gatsby && gatsby serve",
+    "build": "lerna run build",
+    "clean": "yarn clean:artifacts && yarn clean:packages && yarn clean:root",
+    "clean:artifacts": "lerna run clean --parallel",
+    "clean:packages": "lerna clean --yes",
+    "clean:root": "rm -rf node_modules",
     "docz:dev": "cd packages/components && docz dev",
     "docz:build": "cd packages/components && docz build"
   },
@@ -30,7 +35,7 @@
   },
   "lint-staged": {
     "*.{js,md,css}": [
-      "prettier --trailing-comma es5 --single-quote --write",
+      "prettier --trailing-comma es5 --write",
       "git add"
     ]
   }

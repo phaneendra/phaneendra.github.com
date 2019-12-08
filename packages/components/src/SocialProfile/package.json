@@ -1,0 +1,7 @@
+{
+  "name": "@phanee.tk/social-profile",
+  "version": "1.0.0",
+  "main": "SocialProfile.tsx",
+  "license": "MIT",
+  "private": true
+}

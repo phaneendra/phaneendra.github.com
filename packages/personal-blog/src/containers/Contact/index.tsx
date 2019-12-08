@@ -1,19 +1,19 @@
-import * as React from "react"
-import { Formik, FormikActions, FormikProps, Form } from "formik"
-import * as Yup from "yup"
-import Input from "components/Input/Input"
-import Button from "components/Button/Button"
+import * as React from "react";
+import { Formik, FormikActions, FormikProps, Form } from "formik";
+import * as Yup from "yup";
+import Input from "components/src/Input/Input";
+import Button from "components/src/Button/Button";
 import {
   ContactWrapper,
   ContactPageTitle,
   ContactFromWrapper,
   InputGroup,
-} from "./style"
+} from "./style";
 
 interface MyFormValues {
-  firstName: string
-  email: string
-  message: string
+  firstName: string;
+  email: string;
+  message: string;
 }
 
 const SignupSchema = Yup.object().shape({
@@ -22,7 +22,7 @@ const SignupSchema = Yup.object().shape({
     .email("Invalid email")
     .required("Required"),
   message: Yup.string().required("Required"),
-})
+});
 
 const Contact: React.SFC<{}> = () => {
   return (
@@ -33,10 +33,10 @@ const Contact: React.SFC<{}> = () => {
         actions: FormikActions<MyFormValues>
       ) => {
         setTimeout(() => {
-          console.log({ values, actions })
-          alert(JSON.stringify(values, null, 2))
-          actions.setSubmitting(false)
-        }, 700)
+          console.log({ values, actions });
+          alert(JSON.stringify(values, null, 2));
+          actions.setSubmitting(false);
+        }, 700);
       }}
       validationSchema={SignupSchema}
       render={({
@@ -109,7 +109,7 @@ const Contact: React.SFC<{}> = () => {
         </>
       )}
     />
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

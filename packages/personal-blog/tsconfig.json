@@ -18,7 +18,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["../../node_modules/@types", "./@types"],
     "strict": true,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
@@ -30,7 +30,8 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@theme/*": ["./src/theme/*"]
+      "@theme/*": ["./src/theme/*"],
+      "@config/*": ["./config/*"]
     },
     "isolatedModules": true
   },

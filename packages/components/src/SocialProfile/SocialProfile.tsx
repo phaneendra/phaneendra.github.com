@@ -1,9 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   SocialProfileWrapper,
   SocialProfileItem,
-  Tooltip,
-} from './SocialProfile.style';
+  Tooltip
+} from "./SocialProfile.style";
 
 type SocialProfileProps = {
   items: Socialitem[];
@@ -24,9 +24,9 @@ const SocialProfile: React.FunctionComponent<SocialProfileProps> = ({
       {items.map((item, index) => (
         <SocialProfileItem key={index}>
           <a href={item.url} aria-label="social profile">
-            {item.icon || 'icon'}
+            {item.icon || "icon"}
           </a>
-          <Tooltip>{item.tooltip || 'Social Link'}</Tooltip>
+          <Tooltip>{item.tooltip || "Social Link"}</Tooltip>
         </SocialProfileItem>
       ))}
     </SocialProfileWrapper>

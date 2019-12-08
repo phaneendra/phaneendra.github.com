@@ -1,13 +1,7 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
-import htmlescape from "htmlescape";
-import config from "config";
-import { ServerStyleSheets } from "@material-ui/core/styles";
-import theme from "@theme/academic";
-
-const __NEXT_CONFIG__ = { ...config };
-// exclude server config
-delete __NEXT_CONFIG__.server;
+import config from "@config/default";
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   render() {
@@ -54,41 +48,24 @@ export default class MyDocument extends Document {
             href="/icons/icon_180.png"
           />
 
-          <meta
-            name="apple-mobile-web-app-title"
-            content={config.get("siteName")}
-          />
+          <meta name="apple-mobile-web-app-title" content={config.siteName} />
 
           <meta
             name="msapplication-TileColor"
-            content={theme.palette.primary.main}
+            content={config.css.primaryColor}
           />
 
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="theme-color" content={config.css.primaryColor} />
 
           {/* 
             <script>
                   Add a Google Analytics script here.
             </script>
           */}
-
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
         </Head>
         <body>
           <Main />
-          <script
-            id="__NEXT_CONFIG__"
-            type="application/json"
-            // nonce={this.props.nonce}
-            // crossOrigin={this.props.crossOrigin || process.crossOrigin}
-            dangerouslySetInnerHTML={{
-              __html: htmlescape(__NEXT_CONFIG__),
-            }}
-          />
           <NextScript />
         </body>
       </html>
@@ -120,22 +97,28 @@ MyDocument.getInitialProps = async ctx => {
   // 4. page.render
 
   // Render app and page and get the context of the page with collected side effects.
-  const sheets = new ServerStyleSheets();
+  const sheets = new ServerStyleSheet();
   const originalRenderPage = ctx.renderPage;
 
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />),
-    });
+  try {
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: App => props => sheets.collectStyles(<App {...props} />),
+      });
 
-  const initialProps = await Document.getInitialProps(ctx);
+    const initialProps = await Document.getInitialProps(ctx);
 
-  return {
-    ...initialProps,
-    // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
-  };
+    return {
+      ...initialProps,
+      // Styles fragment is rendered after the app and page rendering finish.
+      styles: (
+        <>
+          {initialProps.styles}
+          {sheets.getStyleElement()}
+        </>
+      ),
+    };
+  } finally {
+    sheets.seal();
+  }
 };

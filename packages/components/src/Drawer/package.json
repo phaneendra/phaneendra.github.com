@@ -1,0 +1,7 @@
+{
+  "name": "@phanee.tk/drawer",
+  "version": "1.0.0",
+  "main": "Drawer.tsx",
+  "license": "MIT",
+  "private": true
+}

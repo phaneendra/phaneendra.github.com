@@ -1,11 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../src/components/layout"
-import PersonalBlog from "../src/containers/HomePage"
-import SEO from "../src/components/seo"
+import React from "react";
+import Layout from "../src/components/layout";
+import PersonalBlog from "../src/containers/HomePage";
+import SEO from "../src/components/seo";
 
 const PersonalBlogPage = (props: any) => {
-  const { data } = props
+  const { data } = props;
 
   return (
     <Layout>
@@ -15,18 +14,7 @@ const PersonalBlogPage = (props: any) => {
       />
       <PersonalBlog />
     </Layout>
-  )
-}
+  );
+};
 
-export default PersonalBlogPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`
+export default PersonalBlogPage;

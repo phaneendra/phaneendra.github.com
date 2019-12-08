@@ -8,9 +8,16 @@
         "alias": {
           "@components": "./src/components",
           "@src": "./src",
-          "@theme": "./src/theme"
+          "@theme": "./src/theme",
+          "@config": "./config"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    [
+      "styled-components",
+      {
+        "ssr": true
       }
     ]
   ]

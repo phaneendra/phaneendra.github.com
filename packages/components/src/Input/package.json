@@ -1,0 +1,7 @@
+{
+  "name": "@phanee.tk/input",
+  "version": "1.0.0",
+  "main": "Input.tsx",
+  "license": "MIT",
+  "private": true
+}

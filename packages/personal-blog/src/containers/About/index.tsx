@@ -1,20 +1,20 @@
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import SocialProfile from "components/SocialProfile/SocialProfile"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import SocialProfile from "@phanee.tk/components/src/SocialProfile/SocialProfile";
 import {
   IoLogoFacebook,
   IoLogoTwitter,
   IoLogoInstagram,
   IoLogoLinkedin,
-} from "react-icons/io"
+} from "react-icons/io";
 import {
   AboutWrapper,
   AboutImage,
   AboutPageTitle,
   AboutDetails,
   SocialProfiles,
-} from "./style"
+} from "./style";
 
 const SocialLinks = [
   {
@@ -37,7 +37,7 @@ const SocialLinks = [
     url: "https://www.linkedin.com/company/redqinc/",
     tooltip: "Linked In",
   },
-]
+];
 
 interface AboutProps {}
 
@@ -58,7 +58,7 @@ const About: React.FunctionComponent<AboutProps> = props => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <AboutWrapper>
@@ -95,7 +95,7 @@ const About: React.FunctionComponent<AboutProps> = props => {
         </SocialProfiles>
       </AboutDetails>
     </AboutWrapper>
-  )
-}
+  );
+};
 
-export default About
+export default About;

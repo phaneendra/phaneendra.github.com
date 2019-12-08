@@ -1,5 +1,7 @@
 {
-  "name": "components",
-  "version": "2.0.0",
-  "main": "dist/index.js"
+  "name": "@phanee.tk/components",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "private": true
 }

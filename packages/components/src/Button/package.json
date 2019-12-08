@@ -1,0 +1,7 @@
+{
+  "name": "@phanee.tk/button",
+  "version": "1.0.0",
+  "main": "Button.tsx",
+  "license": "MIT",
+  "private": true
+}

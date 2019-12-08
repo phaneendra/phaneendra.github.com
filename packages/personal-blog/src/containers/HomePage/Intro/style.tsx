@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from "styled-components";
+import { themeGet } from "styled-system";
 
 export const IntroWrapper = styled.div`
   width: 940px;
@@ -22,7 +22,7 @@ export const IntroWrapper = styled.div`
     padding: 50px 25px 80px 25px;
     text-align: center;
   }
-`
+`;
 
 export const IntroImage = styled.div`
   width: 270px;
@@ -56,7 +56,7 @@ export const IntroImage = styled.div`
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
   }
-`
+`;
 
 export const IntroTitle = styled.h1`
   font-size: 30px;
@@ -71,17 +71,17 @@ export const IntroTitle = styled.h1`
   @media (max-width: 575px) {
     font-size: 22px;
   }
-`
+`;
 
 export const Desciption = styled.p`
   color: ${themeGet("colors.textColor", "#292929")};
   font-size: ${themeGet("fontSizes.3", "15")}px;
   line-height: ${themeGet("lineHeights.text", "2")};
-`
+`;
 
 export const IntroInfo = styled.div`
   padding-left: 30px;
   @media (max-width: 575px) {
     padding-left: 0;
   }
-`
+`;

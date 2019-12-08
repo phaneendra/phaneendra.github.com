@@ -1,22 +1,22 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import SocialProfile from "components/SocialProfile/SocialProfile"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import SocialProfile from "components/src/SocialProfile/SocialProfile";
 import {
   IntroWrapper,
   IntroImage,
   IntroTitle,
   Desciption,
   IntroInfo,
-} from "./style"
+} from "./style";
 import {
   IoLogoFacebook,
   IoLogoTwitter,
   IoLogoInstagram,
   IoLogoGithub,
-} from "react-icons/io"
+} from "react-icons/io";
 
-type IntroProps = {}
+type IntroProps = {};
 
 const SocialLinks = [
   {
@@ -39,7 +39,7 @@ const SocialLinks = [
     url: "#",
     tooltip: "Github",
   },
-]
+];
 
 const Intro: React.FunctionComponent<IntroProps> = () => {
   const Data = useStaticQuery(graphql`
@@ -58,10 +58,10 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author, about } = Data.site.siteMetadata
-  const AuthorImage = Data.avatar.childImageSharp.fluid
+  const { author, about } = Data.site.siteMetadata;
+  const AuthorImage = Data.avatar.childImageSharp.fluid;
 
   return (
     <IntroWrapper>
@@ -76,7 +76,7 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
         <SocialProfile items={SocialLinks} />
       </IntroInfo>
     </IntroWrapper>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
