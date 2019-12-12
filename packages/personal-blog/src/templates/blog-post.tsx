@@ -1,24 +1,23 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import _ from "lodash"
-import urljoin from "url-join"
-import { DiscussionEmbed } from "disqus-react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PostCard from "../components/PostCard/postCard"
-import PostDetails from "../components/PostDetails/postDetails"
+import React from "react";
+import _ from "lodash";
+import urljoin from "url-join";
+import { DiscussionEmbed } from "disqus-react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import PostCard from "../components/PostCard/postCard";
+import PostDetails from "../components/PostDetails/postDetails";
 import {
   FacebookShareButton,
   TwitterShareButton,
   PinterestShareButton,
-  RedditShareButton,
-} from "react-share"
+  RedditShareButton
+} from "react-share";
 import {
   IoLogoFacebook,
   IoLogoTwitter,
   IoLogoPinterest,
-  IoLogoReddit,
-} from "react-icons/io"
+  IoLogoReddit
+} from "react-icons/io";
 import {
   BlogPostDetailsWrapper,
   RelatedPostWrapper,
@@ -28,21 +27,21 @@ import {
   BlogPostFooter,
   PostShare,
   PostTags,
-  BlogPostComment,
-} from "./templates.style"
+  BlogPostComment
+} from "./templates.style";
 
 const BlogPostTemplate = (props: any) => {
-  const post = props.data.markdownRemark
-  const { edges } = props.data.allMarkdownRemark
-  const title = post.frontmatter.title
-  const slug = post.fields.slug
-  const siteUrl = props.data.site.siteMetadata.siteUrl
-  const shareUrl = urljoin(siteUrl, slug)
+  const post = props.data.markdownRemark;
+  const { edges } = props.data.allMarkdownRemark;
+  const title = post.frontmatter.title;
+  const slug = post.fields.slug;
+  const siteUrl = props.data.site.siteMetadata.siteUrl;
+  const shareUrl = urljoin(siteUrl, slug);
 
   const disqusConfig = {
     shortname: process.env.DISQUS_NAME,
-    config: { identifier: slug, title },
-  }
+    config: { identifier: slug, title }
+  };
   return (
     <Layout>
       <SEO
@@ -125,10 +124,10 @@ const BlogPostTemplate = (props: any) => {
         </RelatedPostWrapper>
       )}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!, $tag: [String!]) {
@@ -188,4 +187,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

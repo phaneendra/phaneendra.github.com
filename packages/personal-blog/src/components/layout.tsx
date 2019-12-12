@@ -1,16 +1,26 @@
+// # Global Imports
 import React from "react";
 import Sticky from "react-stickynode";
 import { ThemeProvider } from "styled-components";
 import ScrollToTop from "react-scroll-up";
+// #end Global Imports
+
+// # Components and Templates
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import ScrollUpButton from "./ScrollUpButton/ScrollUpButton";
-import ResetCss from "./App/resetCSS";
-import { theme } from "@theme";
+// #end Components and Templates
 
+// # Styles and Themes
+import ResetCss from "./App/resetCSS";
+import theme from "@theme/index";
+// #end Styles and Themes
+
+// # Type definitions
 type LayoutProps = {
   children: React.ReactNode;
 };
+// #end Type definintions
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
