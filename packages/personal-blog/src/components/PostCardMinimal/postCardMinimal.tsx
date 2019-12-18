@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import _ from "lodash"
-import Img from "gatsby-image"
+import * as React from "react";
+import Link from "@components/Link";
+import _ from "lodash";
+import Img from "gatsby-image";
 import {
   PostCardWrapper,
   PostPreview,
@@ -12,18 +12,18 @@ import {
   PostContent,
   PostTags,
   PostDateAndPreview,
-  ReadMore,
-} from "./postCardMinimal.style"
+  ReadMore
+} from "./postCardMinimal.style";
 
 interface PostCardMinimalProps {
-  image?: any
-  title: string
-  description?: string
-  url: string
-  date?: string
-  tags?: []
-  className?: string
-  imageType?: "fixed" | "fluid"
+  image?: any;
+  title: string;
+  description?: string;
+  url: string;
+  date?: string;
+  tags?: [];
+  className?: string;
+  imageType?: "fixed" | "fluid";
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -38,11 +38,11 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ["post_card"]
+  const addAllClasses = ["post_card"];
 
   // className prop checking
   if (className) {
-    addAllClasses.push(className)
+    addAllClasses.push(className);
   }
 
   return (
@@ -52,14 +52,14 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
           {date && (
             <PostDate
               dangerouslySetInnerHTML={{
-                __html: date,
+                __html: date
               }}
               className="post_date"
             />
           )}
           {image == null ? null : (
             <PostPreview className="post_preview">
-              <Link to={url}>
+              <Link href={url}>
                 {imageType === "fluid" ? (
                   <Img fluid={image} alt="post preview" />
                 ) : (
@@ -74,34 +74,34 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
           {tags == null ? null : (
             <PostTags className="post_tags">
               {tags.map((tag: string, index: number) => (
-                <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+                <Link key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                   {`#${tag}`}
                 </Link>
               ))}
             </PostTags>
           )}
           <PostTitle className="post_title">
-            <Link to={url}>{title}</Link>
+            <Link href={url}>{title}</Link>
           </PostTitle>
           {description && (
             <Excerpt
               dangerouslySetInnerHTML={{
-                __html: description,
+                __html: description
               }}
               className="excerpt"
             />
           )}
           <ReadMore>
-            <Link to={url}>Read More</Link>
+            <Link href={url}>Read More</Link>
           </ReadMore>
         </PostContent>
       </PostDetails>
     </PostCardWrapper>
-  )
-}
+  );
+};
 
 PostCardMinimal.defaultProps = {
-  imageType: "fluid",
-}
+  imageType: "fluid"
+};
 
-export default PostCardMinimal
+export default PostCardMinimal;

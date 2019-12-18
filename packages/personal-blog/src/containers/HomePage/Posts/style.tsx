@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from "styled-components";
+import { themeGet } from "styled-system";
 
 const BlogPostsWrapper = styled.div`
   margin: 0 auto;
@@ -28,7 +28,7 @@ const BlogPostsWrapper = styled.div`
   @media (max-width: 575px) {
     padding: 0 25px 0 25px;
   }
-`
+`;
 
 export const SecTitle = styled.div`
   color: ${themeGet("colors.textColor", "#292929")};
@@ -47,6 +47,6 @@ export const SecTitle = styled.div`
     display: block;
     margin-top: 8px;
   }
-`
+`;
 
-export default BlogPostsWrapper
+export default BlogPostsWrapper;

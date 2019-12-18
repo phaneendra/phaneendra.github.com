@@ -14,8 +14,8 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   options: {
-    mdPlugins: [images, emoji],
-  },
+    mdPlugins: [images, emoji]
+  }
 });
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer")({
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
@@ -23,13 +23,13 @@ const withBundleAnalyzer = require("@zeit/next-bundle-analyzer")({
   bundleAnalyzerConfig: {
     server: {
       analyzerMode: "static",
-      reportFilename: "../bundles/server.html",
+      reportFilename: "../bundles/server.html"
     },
     browser: {
       analyzerMode: "static",
-      reportFilename: "../bundles/client.html",
-    },
-  },
+      reportFilename: "../bundles/client.html"
+    }
+  }
 });
 
 // next.js configuration
@@ -51,7 +51,7 @@ const nextConfig = {
   // custom webpack configuration
   webpack: function(config, { dev }) {
     config.node = {
-      fs: "empty",
+      fs: "empty"
     };
     // // parse yaml so we can use config.yml
     // config.module.rules.push({
@@ -59,10 +59,10 @@ const nextConfig = {
     //   use: "js-yaml-loader"
     // });
     return config;
-  },
+  }
 };
 
 module.exports = withPlugins(
-  [withConfig, withFonts, withOptimizedImages, withMDX, withBundleAnalyzer],
+  [withFonts, withOptimizedImages, withMDX, withBundleAnalyzer],
   nextConfig
 );

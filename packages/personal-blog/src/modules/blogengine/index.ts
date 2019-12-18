@@ -2,6 +2,7 @@ import posts from "./post-list";
 import pages from "./page-list";
 
 export default async (type = "all") => {
+  // TODO: create a collection type
   // these lists are already sorted from newest to oldest
   const [pageList, postList] = await Promise.all<any[], any[]>([
     pages(),

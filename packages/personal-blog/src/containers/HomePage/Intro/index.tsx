@@ -1,19 +1,18 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-import SocialProfile from "components/src/SocialProfile/SocialProfile";
+import SocialProfile from "@phanee.tk/components/src/SocialProfile/SocialProfile";
+
 import {
   IntroWrapper,
   IntroImage,
   IntroTitle,
   Desciption,
-  IntroInfo,
+  IntroInfo
 } from "./style";
 import {
   IoLogoFacebook,
   IoLogoTwitter,
   IoLogoInstagram,
-  IoLogoGithub,
+  IoLogoGithub
 } from "react-icons/io";
 
 type IntroProps = {};
@@ -22,23 +21,23 @@ const SocialLinks = [
   {
     icon: <IoLogoFacebook />,
     url: "#",
-    tooltip: "Facebook",
+    tooltip: "Facebook"
   },
   {
     icon: <IoLogoInstagram />,
     url: "#",
-    tooltip: "Instagram",
+    tooltip: "Instagram"
   },
   {
     icon: <IoLogoTwitter />,
     url: "#",
-    tooltip: "Twitter",
+    tooltip: "Twitter"
   },
   {
     icon: <IoLogoGithub />,
     url: "#",
-    tooltip: "Github",
-  },
+    tooltip: "Github"
+  }
 ];
 
 const Intro: React.FunctionComponent<IntroProps> = () => {

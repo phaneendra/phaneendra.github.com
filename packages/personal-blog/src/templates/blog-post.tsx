@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import urljoin from "url-join";
 import { DiscussionEmbed } from "disqus-react";
-import Layout from "../components/layout";
+import Layout from "./layout";
 import SEO from "../components/seo";
 import PostCard from "../components/PostCard/postCard";
 import PostDetails from "../components/PostDetails/postDetails";

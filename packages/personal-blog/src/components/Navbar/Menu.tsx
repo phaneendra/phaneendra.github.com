@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import Link from "@components/Link";
 import { MenuItemWrapper, MenuItem } from "./Navbar.style";
 
 type MenuProps = {
@@ -33,7 +33,7 @@ const Menu: React.FunctionComponent<MenuProps> = ({
           {item.external ? (
             <a href={item.url}>{item.label}</a>
           ) : (
-            <Link to={item.url} activeClassName="active-link">
+            <Link href={item.url} activeClassName="active-link">
               {item.label}
             </Link>
           )}

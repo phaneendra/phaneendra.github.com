@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "./layout";
 import PostCard from "../components/PostCard/postCard";
 import SEO from "../components/seo";
 import { TagPostsWrapper, TagPageHeading, TagName } from "./templates.style";

@@ -1,9 +1,9 @@
-import React from "react"
-import Layout from "../src/components/layout"
-import SEO from "../src/components/seo"
-import Contact from "../src/containers/Contact"
+import React from "react";
+import Layout from "../src/templates/layout";
+import SEO from "../src/components/seo";
+import Contact from "../src/containers/Contact";
 
-type ContactPageProps = {}
+type ContactPageProps = {};
 
 const ContactPage: React.FunctionComponent<ContactPageProps> = props => {
   return (
@@ -15,7 +15,7 @@ const ContactPage: React.FunctionComponent<ContactPageProps> = props => {
 
       <Contact />
     </Layout>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "gatsby";
+import Link from "@components/Link";
 import Drawer from "@phanee.tk/components/Drawer/drawer";
 import { DrawerContext } from "@phanee.tk/components/Drawer/drawerContext";
 import Menu from "./Menu";
@@ -9,7 +9,7 @@ import {
   DrawerHead,
   DrawerLogo,
   DrawerClose,
-  HamburgerIcon,
+  HamburgerIcon
 } from "./Navbar.style";
 import { FiX } from "react-icons/fi";
 
@@ -28,7 +28,7 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
   // Toggle drawer
   const toggleDrawer = () => {
     dispatch({
-      type: "TOGGLE",
+      type: "TOGGLE"
     });
   };
 
@@ -50,7 +50,7 @@ const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
         <DrawerContentWrapper>
           <DrawerHead>
             <DrawerLogo>
-              <Link to="/">
+              <Link href="/">
                 <img src={logo} alt="logo" />
               </Link>
             </DrawerLogo>

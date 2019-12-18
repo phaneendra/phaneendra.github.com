@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../src/components/layout";
-import PersonalBlog from "../src/containers/HomePage";
+
+import PersonalBlog from "@src/containers/HomePage";
 import SEO from "../src/components/seo";
 
 const PersonalBlogPage = (props: any) => {

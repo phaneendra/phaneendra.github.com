@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from "styled-components";
+import { themeGet } from "styled-system";
 
 export const PostCardWrapper = styled.div`
   position: relative;
@@ -11,7 +11,7 @@ export const PostCardWrapper = styled.div`
       transform: translateY(100%);
     }
   }
-`
+`;
 
 export const PostPreview = styled.div`
   position: absolute;
@@ -34,14 +34,14 @@ export const PostPreview = styled.div`
     position: relative;
     transform: translateY(0);
   }
-`
+`;
 
 export const PostDetails = styled.div`
   display: flex;
   @media (max-width: 575px) {
     flex-direction: column;
   }
-`
+`;
 
 export const PostDate = styled.div`
   font-size: 90px;
@@ -73,11 +73,11 @@ export const PostDate = styled.div`
     margin-top: 12px;
     text-transform: uppercase;
   }
-`
+`;
 
 export const PostContent = styled.div`
   align-self: center;
-`
+`;
 
 export const PostTitle = styled.h2`
   font-size: 21px;
@@ -100,7 +100,7 @@ export const PostTitle = styled.h2`
     font-size: 17px;
     margin-bottom: 10px;
   }
-`
+`;
 
 export const Excerpt = styled.p`
   font-size: ${themeGet("fontSizes.3", "15")}px;
@@ -111,7 +111,7 @@ export const Excerpt = styled.p`
   @media (max-width: 990px) {
     font-size: 14px;
   }
-`
+`;
 
 export const PostTags = styled.div`
   display: flex;
@@ -130,7 +130,7 @@ export const PostTags = styled.div`
       margin-right: 25px;
     }
   }
-`
+`;
 
 export const PostDateAndPreview = styled.div`
   position: relative;
@@ -149,7 +149,7 @@ export const PostDateAndPreview = styled.div`
     height: auto;
     width: auto;
   }
-`
+`;
 
 export const ReadMore = styled.div`
   margin-top: 16px;
@@ -162,4 +162,4 @@ export const ReadMore = styled.div`
       color: ${themeGet("primary", "#D10068")};
     }
   }
-`
+`;

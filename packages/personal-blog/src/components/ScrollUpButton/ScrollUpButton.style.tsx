@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from "styled-components";
+import { themeGet } from "styled-system";
 
 const ScrollUpButtonWrapper = styled.div`
   width: 40px;
@@ -19,6 +19,6 @@ const ScrollUpButtonWrapper = styled.div`
   &:hover {
     background-color: ${themeGet("colors.primary", "#D10068")};
   }
-`
+`;
 
-export default ScrollUpButtonWrapper
+export default ScrollUpButtonWrapper;

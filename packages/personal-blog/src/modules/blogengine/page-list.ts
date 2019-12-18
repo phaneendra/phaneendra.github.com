@@ -85,7 +85,8 @@ const pages = async () => {
     );
     return sortedList;
   } catch (error) {
-    return console.log("Error creating pageList", error);
+    console.log("Error creating pageList", error);
+    return Promise.reject(error.message || error);
   }
 };
 

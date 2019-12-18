@@ -1,7 +1,7 @@
 import * as React from "react";
 import PostCardMinimal from "../components/PostCardMinimal/postCardMinimal";
 import Pagination from "../components/Pagination/pagination";
-import Layout from "../components/layout";
+import Layout from "./layout";
 import SEO from "../components/seo";
 import { BlogPostsWrapper } from "./templates.style";
 

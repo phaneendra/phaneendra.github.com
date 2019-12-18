@@ -1,7 +1,7 @@
 // # Global Imports
 import React from "react";
-import App from "next/app";
 import Head from "next/head";
+import NextApp from "next/app";
 import { ThemeProvider } from "styled-components";
 // #end Global Imports
 
@@ -15,10 +15,9 @@ import config from "@config/default";
 // #end Modules and Configs
 
 // # Main Application Class
-export default class MyApp extends App {
+class App extends NextApp {
   render() {
-    const { Component, pageProps } = this.props;
-
+    const { pageProps, Component } = this.props;
     return (
       <React.Fragment>
         <Head>
@@ -33,3 +32,5 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default App;

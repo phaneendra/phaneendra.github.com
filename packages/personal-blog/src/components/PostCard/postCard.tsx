@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import Link from "@components/Link";
 import _ from "lodash";
 import Img from "gatsby-image";
 import {
@@ -10,7 +10,7 @@ import {
   PostTitle,
   Excerpt,
   PostContent,
-  PostTags,
+  PostTags
 } from "./postCard.style";
 
 interface PostCardProps {
@@ -47,7 +47,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
     <PostCardWrapper className={addAllClasses.join(" ")} {...props}>
       {image == null ? null : (
         <PostPreview className="post_preview">
-          <Link to={url}>
+          <Link href={url}>
             {imageType === "fluid" ? (
               <Img fluid={image} alt="post preview" />
             ) : (
@@ -61,7 +61,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
         {date && (
           <PostDate
             dangerouslySetInnerHTML={{
-              __html: date,
+              __html: date
             }}
             className="post_date"
           />
@@ -69,12 +69,12 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
 
         <PostContent className="post_content">
           <PostTitle className="post_title">
-            <Link to={url}>{title}</Link>
+            <Link href={url}>{title}</Link>
           </PostTitle>
           {description && (
             <Excerpt
               dangerouslySetInnerHTML={{
-                __html: description,
+                __html: description
               }}
               className="excerpt"
             />
@@ -83,7 +83,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
           {tags == null ? null : (
             <PostTags className="post_tags">
               {tags.map((tag: string, index: number) => (
-                <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+                <Link key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                   {`#${tag}`}
                 </Link>
               ))}
@@ -96,7 +96,7 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
 };
 
 PostCard.defaultProps = {
-  imageType: "fluid",
+  imageType: "fluid"
 };
 
 export default PostCard;

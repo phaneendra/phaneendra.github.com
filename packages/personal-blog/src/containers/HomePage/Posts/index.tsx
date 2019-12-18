@@ -1,10 +1,10 @@
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import PostCardMinimal from "../../../components/PostCardMinimal/postCardMinimal"
-import Pagination from "../../../components/Pagination/pagination"
-import BlogPostsWrapper, { SecTitle } from "./style"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PostCardMinimal from "../../../components/PostCardMinimal/postCardMinimal";
+import Pagination from "../../../components/Pagination/pagination";
+import BlogPostsWrapper, { SecTitle } from "./style";
 
-type PostsProps = {}
+type PostsProps = {};
 
 const Posts: React.FunctionComponent<PostsProps> = props => {
   const Data = useStaticQuery(graphql`
@@ -50,17 +50,17 @@ const Posts: React.FunctionComponent<PostsProps> = props => {
         }
       }
     }
-  `)
+  `);
 
-  const Posts = Data.allMarkdownRemark.edges
-  const TotalPage = Data.allSitePage.nodes[0].context.numPages
-  const CurrentPage = Data.allSitePage.nodes[0].context.currentPage
+  const Posts = Data.allMarkdownRemark.edges;
+  const TotalPage = Data.allSitePage.nodes[0].context.numPages;
+  const CurrentPage = Data.allSitePage.nodes[0].context.currentPage;
 
   return (
     <BlogPostsWrapper>
       <SecTitle>Leatest Stories</SecTitle>
       {Posts.map(({ node }: any) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <PostCardMinimal
             key={node.fields.slug}
@@ -75,7 +75,7 @@ const Posts: React.FunctionComponent<PostsProps> = props => {
             date={node.frontmatter.date}
             tags={node.frontmatter.tags}
           />
-        )
+        );
       })}
 
       {TotalPage >> 1 ? (
@@ -88,7 +88,7 @@ const Posts: React.FunctionComponent<PostsProps> = props => {
         ""
       )}
     </BlogPostsWrapper>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;

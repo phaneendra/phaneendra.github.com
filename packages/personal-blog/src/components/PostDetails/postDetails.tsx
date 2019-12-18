@@ -1,7 +1,7 @@
-import * as React from "react"
-import Img from "gatsby-image"
-import { Link } from "gatsby"
-import _ from "lodash"
+import * as React from "react";
+import Img from "gatsby-image";
+import Link from "@components/Link";
+import _ from "lodash";
 import {
   PostDetailsWrapper,
   PostTitle,
@@ -9,18 +9,18 @@ import {
   PostPreview,
   PostDescriptionWrapper,
   PostDescription,
-  PostTags,
-} from "./postDetails.style"
+  PostTags
+} from "./postDetails.style";
 
 type PostDetailsProps = {
-  title: string
-  date?: string
-  preview?: any
-  description: any
-  tags?: []
-  className?: string
-  imagePosition?: "left" | "top"
-}
+  title: string;
+  date?: string;
+  preview?: any;
+  description: any;
+  tags?: [];
+  className?: string;
+  imagePosition?: "left" | "top";
+};
 
 const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
   title,
@@ -32,14 +32,14 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
   imagePosition,
   ...props
 }) => {
-  const addClass: string[] = ["post_details"]
+  const addClass: string[] = ["post_details"];
 
   if (imagePosition == "left") {
-    addClass.push("image_left")
+    addClass.push("image_left");
   }
 
   if (className) {
-    addClass.push(className)
+    addClass.push(className);
   }
 
   return (
@@ -92,7 +92,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
         {tags == null ? null : (
           <PostTags>
             {tags.map((tag, index) => (
-              <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+              <Link key={index} href={`/tags/${_.kebabCase(tag)}/`}>
                 {`#${tag}`}
               </Link>
             ))}
@@ -100,11 +100,11 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
         )}
       </PostDescriptionWrapper>
     </PostDetailsWrapper>
-  )
-}
+  );
+};
 
 PostDetails.defaultProps = {
-  imagePosition: "top",
-}
+  imagePosition: "top"
+};
 
-export default PostDetails
+export default PostDetails;

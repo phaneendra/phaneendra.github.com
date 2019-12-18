@@ -81,7 +81,8 @@ const posts = async () => {
     );
     return sortedList;
   } catch (error) {
-    return console.log("Error creating postList", error);
+    console.log("Error creating postList", error);
+    return Promise.reject(error.message || error);
   }
 };
 
