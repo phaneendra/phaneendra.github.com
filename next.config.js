@@ -9,10 +9,10 @@ const withPlugins = require("next-compose-plugins");
 const images = require("remark-images");
 const emoji = require("remark-emoji");
 // const withCSS = require("@zeit/next-css");
-// const withOptimizedImages = require("next-optimized-images")({
-//   optimizeImagesInDev: true,
-//   handleImages: ["jpg", "jpeg", "png", "svg", "gif", "webp"]
-// });
+const withOptimizedImages = require("next-optimized-images")({
+  optimizeImagesInDev: true,
+  handleImages: ["jpg", "jpeg", "png", "svg", "gif", "webp"]
+});
 const withMDX = require("@next/mdx")();
 const withMDXconfig = {
   //parse mdx files
@@ -67,7 +67,10 @@ const nextConfig = {
   }
 };
 
-module.exports = withPlugins([[withMDX, withMDXconfig]], nextConfig);
+module.exports = withPlugins(
+  [[withMDX, withMDXconfig], withOptimizedImages],
+  nextConfig
+);
 
 // const withMDX = require("@next/mdx")();
 // module.exports = withMDX({

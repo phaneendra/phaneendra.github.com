@@ -1,6 +1,6 @@
 import React from "react";
-import SiteLayout from "@components/SiteLayout";
-import About from "components/About";
+import SiteLayout from "@layouts/SiteLayout";
+import About from "@containers/About";
 
 const meta = {
   title: "About",
@@ -11,11 +11,11 @@ const meta = {
   seoDescription: "This is an about page."
 };
 
-const About = () => {
+const AboutPage = () => {
   return <About />;
 };
 
-About.meta = meta;
-About.Layout = SiteLayout;
+AboutPage.meta = meta;
+AboutPage.Layout = SiteLayout;
 
-export default About;
+export default AboutPage;

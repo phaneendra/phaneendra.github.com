@@ -14,7 +14,7 @@
           "@src": "./src",
           "@pages": "./pages",
           "@config": "./config",
-          "@assets": "./static"
+          "@assets": "./public"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

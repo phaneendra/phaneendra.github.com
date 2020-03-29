@@ -4,12 +4,12 @@ import Head from "next/head";
 import { ThemeProvider, Styled } from "theme-ui";
 import { DefaultSeo } from "next-seo";
 
-import { config } from "@config/config.json";
+import config from "@config";
 import theme from "@themes/default";
 
 const Noop = ({ children }) => children;
 
-class MyApp extends App {
+class Site extends App {
   // Only uncomment this method if you have blocking data requirements for
   // every single page in your application. This disables the ability to
   // perform automatic static optimization, causing every page in your app to
@@ -30,8 +30,6 @@ class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <meta name="theme-color" content={theme.colors.primary} />
-          <meta name="msapplication-TileColor" content={theme.colors.primary} />
           <meta name="keywords" content={config.keywords} />
           <meta name="apple-mobile-web-app-title" content={config.siteName} />
         </Head>
@@ -48,4 +46,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default Site;
