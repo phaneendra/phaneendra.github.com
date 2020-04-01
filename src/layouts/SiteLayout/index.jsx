@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
+import { jsx, Container, Flex, Box } from "theme-ui";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 
 const SiteLayout = props => {
   return (
-    <div
+    <Flex
       sx={{
-        display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
         variant: "layout.root"
       }}
     >
-      <header
+      <Box
+        id="top"
         sx={{
           position: "fixed",
           width: "100%",
@@ -22,16 +22,17 @@ const SiteLayout = props => {
         }}
       >
         <Header />
-      </header>
-      <main
+      </Box>
+      <Box
+        id="center"
         sx={{ width: "100%", flex: "1 1 auto", pt: 24, variant: "layout.main" }}
       >
         <Container>{props.children}</Container>
-      </main>
-      <footer sx={{ width: "100%", variant: "layout.footer" }}>
+      </Box>
+      <Box id="bottom" sx={{ width: "100%", variant: "layout.footer" }}>
         <Footer />
-      </footer>
-    </div>
+      </Box>
+    </Flex>
   );
 };
 

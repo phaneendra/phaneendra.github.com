@@ -1,25 +1,24 @@
 /** @jsx jsx */
-import { jsx, useColorMode, NavLink } from "theme-ui";
+import { jsx, useColorMode, NavLink, Box, Flex } from "theme-ui";
 
 import Logo from "@components/Logo";
 
 const Header = () => {
   const [colorMode, setColorMode] = useColorMode();
   return (
-    <div
+    <Flex
+      as="header"
       sx={{
         width: "full",
         maxWidth: "screenxl",
-        py: 2,
-        mt: 0,
+        height: 16,
         mx: "auto",
-        display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "space-between"
       }}
     >
-      <div
+      <Box
         id="brand"
         sx={{
           pl: 4,
@@ -28,10 +27,12 @@ const Header = () => {
         }}
       >
         <Logo size={12} />
-      </div>
+        <span>@phaneendra/notebook</span>
+      </Box>
 
-      <div
-        id="nav-content"
+      <Box
+        as="nav"
+        id="primary-navigation"
         sx={{
           width: ["full", "full", "auto", "auto"],
           flexGrow: 1,
@@ -54,7 +55,15 @@ const Header = () => {
             p: 0
           }}
         >
-          <li sx={{ mr: 3 }}>
+          <li
+            sx={{
+              mr: 3,
+              "&:hover, &:focus": {
+                bg: "backgroundHover",
+                textDecoration: "underline"
+              }
+            }}
+          >
             <NavLink href="#!" px={4} py={2}>
               Home
             </NavLink>
@@ -111,8 +120,8 @@ const Header = () => {
         >
           Toggle {colorMode === "light" ? "Dark" : "Light"}
         </button>
-      </div>
-    </div>
+      </Box>
+    </Flex>
   );
 };
 
