@@ -8,8 +8,8 @@
         "alias": {
           "@components": "./src/components",
           "@libs": "./src/libs",
-          "@layouts": "./src/layouts",
-          "@containers": "./src/containers",
+          "@layouts": "./src/components/layouts",
+          "@containers": "./src/templates",
           "@themes": "./src/themes",
           "@src": "./src",
           "@pages": "./pages",

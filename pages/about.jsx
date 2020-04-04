@@ -1,6 +1,6 @@
 import React from "react";
 import SiteLayout from "@layouts/SiteLayout";
-import About from "@containers/About";
+import About from "@templates/About";
 
 const meta = {
   title: "About",

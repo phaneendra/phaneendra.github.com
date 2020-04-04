@@ -143,35 +143,35 @@ export default {
     heading: "1.25"
   },
   sizes: {
-    "0": "0",
-    "1": "0.25rem",
-    "2": "0.5rem",
-    "3": "0.75rem",
-    "4": "1rem",
-    "5": "1.25rem",
-    "6": "1.5rem",
-    "8": "2rem",
-    "10": "2.5rem",
-    "12": "3rem",
-    "16": "4rem",
-    "20": "5rem",
-    "24": "6rem",
-    "32": "8rem",
-    "40": "10rem",
-    "48": "12rem",
-    "56": "14rem",
-    "64": "16rem",
+    "0": "0", // 0px on 16px base size
+    "1": "0.25rem", // 0px on 16px base size
+    "2": "0.5rem", // 0px on 16px base size
+    "3": "0.75rem", // 12px on 16px base size
+    "4": "1rem", // 16px on 16px base size
+    "5": "1.25rem", // 20px on 16px base size
+    "6": "1.5rem", // 24px on 16px base size
+    "8": "2rem", // 32px on 16px base size
+    "10": "2.5rem", // 40px on 16px base size
+    "12": "3rem", // 48px on 16px base size
+    "16": "4rem", // 64px on 16px base size
+    "20": "5rem", // 80px on 16px base size
+    "24": "6rem", // 96px on 16px base size
+    "32": "8rem", // 112px on 16px base size
+    "40": "10rem", // 128px on 16px base size
+    "48": "12rem", // 160px on 16px base size
+    "56": "14rem", // 192px on 16px base size
+    "64": "16rem", // 224px on 16px base size
     px: "1px",
-    xs: "20rem",
-    sm: "24rem",
-    md: "28rem",
-    lg: "32rem",
-    xl: "36rem",
-    "2xl": "42rem",
-    "3xl": "48rem",
-    "4xl": "56rem",
-    "5xl": "64rem",
-    "6xl": "72rem",
+    xs: "20rem", // 320px on 16px base size
+    sm: "24rem", // 384px on 16px base size
+    md: "28rem", // 448px on 16px base size
+    lg: "32rem", // 512px on 16px base size
+    xl: "36rem", // 576px on 16px base size
+    "2xl": "42rem", // 672px on 16px base size
+    "3xl": "48rem", // 768px on 16px base size
+    "4xl": "56rem", // 896px on 16px base size
+    "5xl": "64rem", // 1024px on 16px base size
+    "6xl": "72rem", // 1152px on 16px base size
     "1/2": "50%",
     "1/3": "33.333333%",
     "2/3": "66.666667%",
