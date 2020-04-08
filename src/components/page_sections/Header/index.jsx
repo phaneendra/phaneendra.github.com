@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, useColorMode, Flex } from "theme-ui";
+import { jsx, Flex } from "theme-ui";
 
-import Logo from "@components/Logo";
-import NavLink from "@components/NavLink";
+import Logo from "@components/elements/Logo";
+import NavLink from "@components/navigation/NavLink";
+import ColorToggle from "@components/elements/ColorToggle";
 
 const Header = () => {
-  const [colorMode, setColorMode] = useColorMode();
   return (
     <Flex
       as="header"
@@ -16,14 +16,14 @@ const Header = () => {
         mx: "auto",
         flexWrap: "wrap",
         alignItems: "stretch",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
       }}
     >
       <Flex
         id="brand"
         sx={{
           pl: 4,
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Logo size={12} />
@@ -40,19 +40,21 @@ const Header = () => {
           justifyContent: "flex-end",
           pl: 4,
           mt: 0,
-          bg: "transparent"
+          bg: "transparent",
         }}
       >
         <NavLink href="#!">Home</NavLink>
         <NavLink href="#!">About</NavLink>
         <NavLink href="#!">Reach Me</NavLink>
-
-        {/* 
-        <button
-          onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
-        >
-          Toggle {colorMode === "light" ? "Dark" : "Light"}
-        </button> */}
+      </Flex>
+      <Flex
+        id="Toggle"
+        sx={{
+          pl: 4,
+          alignItems: "center",
+        }}
+      >
+        <ColorToggle />
       </Flex>
     </Flex>
   );

@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Box } from "theme-ui";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import Header from "@components/page_sections/Header";
+import Footer from "@components/page_sections/Footer";
 
-const SiteLayout = props => {
+const SiteLayout = (props) => {
   return (
     <Flex
       sx={{
         flexDirection: "column",
         minHeight: "100vh",
-        variant: "layout.root"
+        variant: "layout.root",
       }}
     >
       <Box
@@ -18,7 +18,7 @@ const SiteLayout = props => {
           position: "fixed",
           width: "100%",
           boxShadow: "lg",
-          variant: "layout.header"
+          variant: "layout.header",
         }}
       >
         <Header />
