@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, NavLink as ThemeUiNavLink } from "theme-ui";
 
-const NavLink = props => {
+const NavLink = React.forwardRef((props, ref) => {
   return (
     <ThemeUiNavLink
-      {...props}
+      href={props.href}
+      onClick={props.onClick}
+      ref={ref}
       sx={{
         display: "flex",
         alignItems: "center",
@@ -13,12 +15,14 @@ const NavLink = props => {
         px: 4,
         py: 2,
         "&:hover, &:focus": {
-          bg: "backgroundHover"
+          bg: "backgroundHover",
         },
-        ...props.sx
+        ...props.sx,
       }}
-    />
+    >
+      {props.children}
+    </ThemeUiNavLink>
   );
-};
+});
 
 export default NavLink;

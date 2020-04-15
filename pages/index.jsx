@@ -1,14 +1,21 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import SiteLayout from "@layouts/SiteLayout";
+import Home from "@templates/Home";
 
-export default props => (
-  <div
-    sx={{
-      maxWidth: 1024,
-      mx: "auto",
-      p: 3
-    }}
-  >
-    <Styled.h1>Hello</Styled.h1>
-  </div>
-);
+const meta = {
+  title: "Home",
+  tags: ["Next.js", "MDX"],
+  publishDate: "2011-01-01",
+  modifiedDate: false,
+  seoDescription: "This is the Home page.",
+};
+
+const HomePage = () => {
+  return <Home />;
+};
+
+HomePage.meta = meta;
+HomePage.Layout = SiteLayout;
+
+export default HomePage;
