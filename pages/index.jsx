@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import SiteLayout from "@layouts/SiteLayout";
+import SiteLayout from "@layouts/SiteLayouts/Default";
 import Home from "@templates/Home";
 
 const meta = {
@@ -8,7 +8,7 @@ const meta = {
   tags: ["Next.js", "MDX"],
   publishDate: "2011-01-01",
   modifiedDate: false,
-  seoDescription: "This is the Home page.",
+  seoDescription: "This is the Home page."
 };
 
 const HomePage = () => {

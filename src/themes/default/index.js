@@ -161,6 +161,7 @@ export default {
     "48": "12rem", // 160px on 16px base size
     "56": "14rem", // 192px on 16px base size
     "64": "16rem", // 224px on 16px base size
+    "72": "18rem", // 224px on 16px base size
     px: "1px",
     xs: "20rem", // 320px on 16px base size
     sm: "24rem", // 384px on 16px base size
@@ -238,7 +239,8 @@ export default {
     "40": "10rem",
     "48": "12rem",
     "56": "14rem",
-    "64": "16rem"
+    "64": "16rem",
+    "72": "18rem"
   },
   radii: {
     none: "0",

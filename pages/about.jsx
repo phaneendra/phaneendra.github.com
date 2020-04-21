@@ -1,5 +1,5 @@
 import React from "react";
-import SiteLayout from "@layouts/SiteLayout";
+import SiteLayout from "@layouts/SiteLayouts/Default";
 import About from "@templates/About";
 
 const meta = {
