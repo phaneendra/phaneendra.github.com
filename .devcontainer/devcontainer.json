@@ -40,7 +40,6 @@
     "quicktype.quicktype",
     "christian-kohler.path-intellisense",
     "jounqin.vscode-mdx",
-    "dsznajder.es7-react-js-snippets",
-    "vscode-styled-components"
+    "dsznajder.es7-react-js-snippets"
   ]
 }
