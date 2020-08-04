@@ -16,8 +16,23 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@Components": ["src/components"],
+      "@Interfaces": ["src/interfaces"],
+      "@Interfaces/*": ["src/interfaces/*"],
+      "@Pages/*": ["pages/*"],
+      "@Server/*": ["server/*"],
+      "@Services": ["src/services"],
+      "@Services/*": ["src/services/*"],
+      "@Static/*": ["public/static/*"],
+      "@Config": ["src/config"],
+      "@Config/*": ["src/config/*"],
+      "@Test/*": ["test/*"]
+    }
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules", "dist", ".next", "out", "next.config.js", ".babelrc", "bundles", "coverage", "test/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

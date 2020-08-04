@@ -1,0 +1,39 @@
+// #region Global Imports
+import React from "react";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { Flex, Box, Heading, Stack, Text, Link } from "@chakra-ui/layout";
+// #endregion Global Imports
+
+function Home() {
+  const heroBgColor = useColorModeValue("#ffedc5", "none");
+  return (
+    <Stack h={["65vh", null, "70vh", "90vh"]} mx="auto" w="80%" justifyContent="center" flexDirection="column">
+      <Flex alignSelf="center">
+        <Heading as="h1" fontSize={["4xl", "5xl", "6xl", "140px"]} letterSpacing={2} lineHeight={1.1} fontWeight="bold">
+          I design & build beautiful digital
+          <Box as="span" bg={heroBgColor}>
+            {" "}
+            experiences
+          </Box>
+        </Heading>
+      </Flex>
+
+      <Text fontWeight="bold" fontSize={[20, 25]} color="gray.500" mt={20}>
+        Fullstack JavaScript Developer
+      </Text>
+      <Link
+        href="https://twitter.com/phaneekr"
+        isExternal
+        fontWeight="bold"
+        fontSize={[15, 20]}
+        color="green.500"
+        width="fit-content"
+        _focus={{ outline: 0 }}
+      >
+        @phaneekr
+      </Link>
+    </Stack>
+  );
+}
+
+export default Home;

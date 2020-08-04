@@ -1,13 +1,19 @@
+// #region Global Imports
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import { ThemeProvider, Styled } from "theme-ui";
 import { DefaultSeo } from "next-seo";
+import { ColorModeProvider, ThemeProvider, GlobalStyle } from "@chakra-ui/system";
+import CSSReset from "@chakra-ui/css-reset";
+// import theme from "@chakra-ui/theme";
+// #endregion Global Imports
 
-import config from "@config";
-import theme from "@themes/default";
+// #region Local Imports
+import config from "../../src/config";
+import theme from "../../src/themes/default";
+// #endregion Local Imports
 
-const Noop = ({ children }) => children;
+// #############################################################################
 
 class Site extends App {
   // Only uncomment this method if you have blocking data requirements for
@@ -24,8 +30,6 @@ class Site extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    const Layout = Component.Layout || Noop;
-    // const { theme } = useThemeUI();
 
     return (
       <React.Fragment>
@@ -35,11 +39,11 @@ class Site extends App {
         </Head>
         <DefaultSeo {...config.seo} />
         <ThemeProvider theme={theme}>
-          <Styled.root>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </Styled.root>
+          <ColorModeProvider>
+            <CSSReset />
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </ColorModeProvider>
         </ThemeProvider>
       </React.Fragment>
     );
