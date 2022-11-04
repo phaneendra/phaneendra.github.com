@@ -182,6 +182,7 @@ Follow the interactive prompt to generate a post with pre-filled front matter.
 
 All dependencies are latest except for below
 `esbuild | v0.14.54` | to upgrade to v0.15.x waiting on pull https://github.com/kentcdodds/mdx-bundler/pull/188
+`globby | 11.0.4` | to upgrade and fix esm issues on next.config.js
 
 ## Deploy
 
