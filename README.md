@@ -1,152 +1,226 @@
-# Features
+<h1 align="center">
+  Personal Blog and Learning Notes
+</h1>
 
-Site uses Next.js for all its rendering So let's dive into what Next.js does:
+<p align="center">
+  This is my personal portfolio blog and learning notes hosted <a href="https://phaneendra.vercel.app/" target="_blank">here</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a>, <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>.
+</p>
 
-## Compiler
+<p align="center">
+  The original template is designed by <a href="https://github.com/timlrx" target="_blank">Timothy Lin</a> and can be found <a href="https://github.com/timlrx/tailwind-nextjs-starter-blog" target="_blank">here</a>. The demo for the same can be found <a href="https://tailwind-nextjs-starter-blog.vercel.app/" target="_blank">here</a>.
+</p>
 
-Next.js compiles React components using webpack and Babel. It ensures compilation is fast and that common dependencies are shared across pages.
+<div align="center">
 
-We also have multiple webpack plugins doing optimizations both for on-demand as well as static rendering. It handles polyfilling, object rest spread, class properties, removing proptypes in production. It handles hot module replacement, ignoring certain development-only libraries etc.
+<a href="https://phaneendra.vercel.app/" target="blank" >![View Demo](https://img.shields.io/badge/-View%20Demo%20-orange?color=%23DE1D8D&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/issues/new?assignees=&labels=bug&template=bug_report.md&title=">![Report Bug](https://img.shields.io/badge/-Report%20Bug%20-orange?color=%23ee0701&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/issues/new?assignees=&labels=&template=feature_request.md&title=">![Request Feature](https://img.shields.io/badge/-Request%20Feature%20-orange?color=%230e8a16&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/fork">![Fork](https://img.shields.io/github/forks/pycoder2000/blog?color=%23bfe5bf&style=for-the-badge)</a> <img src="https://img.shields.io/github/stars/phaneendra/phaneendra.github.com?color=darkgreen&style=for-the-badge">
 
-It also handles small details, for example that you don't have to `import React from 'react'` when using functional components and JSX.
+</div>
 
-## On-demand rendering (traditional SSR)
+<div align="center">
 
-On demand rendering means for every request that comes in you render a unique page (It's still possible to cache this response ofcourse) This is great for highly dynamic web apps in which content changes often, you have a login state, and similar use cases. This mode requires having a Node.js server running. Examples of this are zeit.co, marvel.com, deliveroo.com, jobs.netflix.com, and opencollective.com
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 
-## Static exporting
+</div>
 
-Render all pages to `.html` files up-front and serve them using any file server. This does not require you to have a Node.js server running and the html can run anywhere. An example of this is nextjs.org, carbon.now.sh, plot.ly, material-ui.com, and vergecurrency.com
+## Features
 
-## Automatic code splitting
+- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
+- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
+- Lightweight, 45kB first load JS, uses Preact in production build
+- Mobile-friendly view
+- Light and dark theme
+- Self-hosted font with [Fontsource](https://fontsource.org/)
+- Supports [plausible](https://plausible.io/), [simple analytics](https://simpleanalytics.com/) and google analytics
+- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
+- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
+- Math display supported via [KaTeX](https://katex.org/)
+- Citation and bibliography support via [rehype-citation](https://github.com/timlrx/rehype-citation)
+- Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
+- Flexible data retrieval with [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
+- Support for tags - each unique tag will be its own page
+- Support for multiple authors
+- Blog templates
+- TOC component
+- Support for nested routing of blog posts
+- Newsletter component with support for mailchimp, buttondown, convertkit and klaviyo
+- Supports [giscus](https://github.com/laymonage/giscus), [utterances](https://github.com/utterance/utterances) or disqus
+- Projects page
+- Preconfigured security headers
+- SEO friendly with RSS feed, sitemaps and more!
 
-Next.js builds around a structure that let's you scale your application to thousands of unique pages (using the pages directory), as routes are unaware of eachother and are their own code-splitting entrypoint. This means that you only load the code neccesary for the page that you're rendering. It also means that if someone on your team breaks a certain component used on only one page only that page breaks and not the rest of the application.
+## Quick Start Guide
 
-## Hot module replacement
+1. JS with TypeScript
 
-Automatic reloading of components without having to refresh the browser. This allows you to see updates to components / styles immediately.
+```bash
+npx degit https://github.com/phaneendra/phaneendra.github.com.git
+```
 
-There is another spectrum to this issue which is "what if I make an error", in that case Next.js will show you an overlay showing the exact (source) line the error happened on, so it applies sourcemaps automatically.
+1. Personalize `siteMetadata.js` (site related information)
+2. Modify the content security policy in `next.config.js` if you want to use
+   any analytics provider or a commenting solution other than giscus.
+3. Personalize `authors/default.md` (main author)
+4. Modify `projectsData.js`
+5. Modify `headerNavLinks.js` to customize navigation links
+6. Add blog posts
+7. Deploy on Vercel
 
-## Routing / prefetching
+## Installation
 
-When you have pages in the pages directory you generally want to link between them, we allow you to do this using client rendering (instead of doing full route transitions) in a SPA way. Furthermore this also allows you to "prefetch" pages that you know users are going to navigate to so that navigations are faster.
+```bash
+npm install
+```
 
-Documentation can be found here: [Next With Link](https://nextjs.org/docs#with-link)
+## Development
 
-## Dynamic loading (like React.lazy but more optimized for SSR)
+First, run the development server:
 
-One argument that I've seen come up is "But I can use React.lazy right?", React.lazy is great for loading a component, however when pre-rendering (SSR/static) this can be further optimized. For example Next.js keeps track of exactly the rendered `next/dynamic` components and injects their script tags + preload tags automatically.
+```bash
+npm start
+```
 
-[Nextjs dynamic imports](https://nextjs.org/docs#dynamic-import)
+or
 
-## Styling (optional)
+```bash
+npm run dev
+```
 
-In pretty much all applications you need to do styling to some degree, Next.js ships with styled-jsx, but it's not bundled if not used. You can also use any other solution out there, eg styled-component, emotion etc.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-[Nextjs CSS in JS](https://nextjs.org/docs#built-in-css-support)
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Handling the `<head>`
+## Extend / Customize
 
-When server rendering you need a way for pages to define their `<head>`, eg for meta tags, title etc.
+`data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
 
-[Nextjs Head](https://nextjs.org/docs#populating-head)
+`data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
 
-## Data fetching
+`data/projectsData.js` - data used to generate styled card on the projects page.
 
-Next.js introduces a new lifecycle method named `getInitialProps` as a way to asynchronously fetch data before rendering.
+`data/headerNavLinks.js` - navigation links.
 
-React js roadmap is to support ssr intrinsically. For reference the project name for it is [React Fizz](https://github.com/facebook/react/pull/14144)
+`data/logo.svg` - replace with your own logo.
 
-With Fizz we'll be able to suspend part of the rendering and show a placeholder instead. However even with Fizz there is still a need for data-fetching solutions. It basically comes down to that Next.js will only get better once Fizz lands.
+`data/blog` - replace with your own blog posts.
 
-## Error handling
+`public/static` - store assets such as images and favicons.
 
-Handling server-rendering and client-rendering errors in a correct manner.
+`tailwind.config.js` and `css/tailwind.css` - contain the tailwind stylesheet which can be modified to change the overall look and feel of the site.
 
-[Nextjs Error Handling](https://nextjs.org/docs#custom-error-handling)
+`css/prism.css` - controls the styles associated with the code blocks. Feel free to customize it and use your preferred prismjs theme e.g. [prism themes](https://github.com/PrismJS/prism-themes).
 
-## Serverless
+`components/social-icons` - to add other icons, simply copy an svg file from [Simple Icons](https://simpleicons.org/) and map them in `index.js`. Other icons use [heroicons](https://heroicons.com/).
 
-Scaling on-demand rendered pages to a giant level of concurrency with fast cold startup is easy using the serverless compilation target.
+`components/MDXComponents.js` - pass your own JSX code or React component by specifying it over here. You can then call them directly in the `.mdx` or `.md` file. By default, a custom link and image component is passed.
 
-## Serverful (or just "running as a server")
+`layouts` - main templates used in pages.
 
-Next.js also supports a more traditional server approach where all routes are handled by a single server.
+`pages` - pages to route to. Read the [Next.js documentation](https://nextjs.org/docs) for more information.
 
-## Optimize for production
+`next.config.js` - configuration related to Next.js. You need to adapt the Content Security Policy if you want to load scripts, images etc. from other domains.
 
-There are many things involved here but some of the bigger optimizations we do:
+## Post
 
-- strip unneeded PropTypes
-- minify all Javascript
-- optimize page loading (there is no single manifest holding all routes)
-- add preload tags (`<link rel="preload">`)
-- prefetching
-- ensure minimal rendered HTML
-- cache builds
+### Frontmatter
 
-We've also done optimizations to webpack and continue to improve the tools Next.js is built on top of, eg: [Webpack Memory](https://nextjs.org/blog/webpack-memory/)
+Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
 
-## Optimize for development
+Currently 10 fields are supported.
 
-One of the larger optimizations we do is compiling pages on-demand, meaning that when starting the development server we don't compile the pages but instead compile them on-demand when accessed. This ensures that even when you have many pages development on a few of them stays fast. Explained more here: [On demand compilation](https://nextjs.org/blog/next-8/#improved-on-demand-entries)
+```
+title (required)
+date (required)
+tags (required, can be empty array)
+lastmod (optional)
+draft (optional)
+summary (optional)
+images (optional, if none provided defaults to socialBanner in siteMetadata config)
+authors (optional list which should correspond to the file names in `data/authors`. Uses `default` if none is specified)
+layout (optional list which should correspond to the file names in `data/layouts`)
+canonicalUrl (optional, canonical url for the post for SEO)
+```
 
-## Zones / Microfrontends
+Here's an example of a post's frontmatter:
 
-Allows for incrementally adopting Next.js into your organization / team. There are many examples of this. Eg trulia.com, ign.com/games
+```
+---
+title: 'Introducing Tailwind Nexjs Starter Blog'
+date: '2021-01-12'
+lastmod: '2021-01-18'
+tags: ['next-js', 'tailwind', 'guide']
+draft: false
+summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
+images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
+authors: ['default', 'sparrowhawk']
+layout: PostLayout
+canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-tailwind-nextjs-starter-blog
+---
+```
 
-# Structuring a site
+### Compose
 
-## Document (pages/_document.js)
+Run `node ./scripts/compose.js` to bootstrap a new post.
 
-Defines basic HTML5 document structure with meta tags for
+Follow the interactive prompt to generate a post with pre-filled front matter.
 
-- viewport settings
-- manifest definitions for pwa
-- favicons
-- apple mobile icons
-- win mobile icons
-- mobile icons
+## 📚 Tech Stack
 
-### No Flash of colors
+| Tool           | Link                                                      |
+| -------------- | --------------------------------------------------------- |
+| Framework      | [Next.js](https://nextjs.org/)                            |
+| ORM            | [Prisma](https://prisma.io/)                              |
+| Database       | [PlanetScale](https://planetscale.com)                    |
+| Authentication | [NextAuth.js](https://next-auth.js.org/)                  |
+| Deployment     | [Vercel](https://vercel.com)                              |
+| Styling        | [Tailwindcss](https://tailwindcss.com/)                   |
+| Comment        | [Giscus](https://github.com/laymonage/giscus/)            |
+| Newsletter     | [Email Octopus](https://emailoctopus.com/)                |
+| Favicon        | [realfavicongenerator](https://realfavicongenerator.net/) |
+| Content        | [MDX](https://mdxjs.com/)                                 |
 
-In theme-ui inorder to prevent a flash of colors that occur during rehydration set IntializedColorMode
+## Dependencies
 
-- IntializeColorMode : rendered in HTML before the main application to help prevent the flash of colors that can occur during rehydration.
+All dependencies are latest except for below
+`esbuild | v0.14.54` | to upgrade to v0.15.x waiting on pull https://github.com/kentcdodds/mdx-bundler/pull/188
 
-## App (pages/_app.js)
+## Deploy
 
-Defines the app structure
+**Vercel**  
+The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-- Themeprovider
-- root style
-- meta tags for theme colors
-- default seo
-- Dynamically set the layout based on the pages layout props
+**Netlify / GitHub Pages / Firebase etc.**  
+As the template uses `next/image` for image optimization, additional configurations have to be made to deploy on other popular static hosting websites like [Netlify](https://www.netlify.com/) or [GitHub Pages](https://pages.github.com/). An alternative image optimization provider such as Imgix, Cloudinary or Akamai has to be used. Alternatively, replace the `next/image` component with a standard `<img>` tag. See [`next/image` documentation](https://nextjs.org/docs/basic-features/image-optimization) for more details.
 
-## Site Layout(src/layouts/SiteLayout/index.js)
+The API routes used in the newsletter component cannot be used in a static site export. You will need to use a form API endpoint provider and substitute the route in the newsletter component accordingly. Other hosting platforms such as Netlify also offer alternative solutions - please refer to their docs for more information.
 
-Site wide layout component to hold meta tags for SEO
+## Contribute
 
-- Title
-- Description
-- OpenGrap tags
-- Twitter Cards
-- Robots
-- Cannonical tags
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Layout component also holds the basic structure for the site
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-- Header
-- Main
-- Footer
+1. Fork the Project
+2. Commit your Changes
 
-## Pages (pages/*.js)
+   ```bash
+   git commit -m 'Add some Feature'
+   ```
 
-Any other js file in pages directory is treated as a page in nextjs
+3. Push to the Branch
 
-each page to import data from getInitialProps method
+   ```bash
+   git push origin main
+   ```
 
-- sitewide config
-- any other page data to initialize the state of the page eg. blog data
+4. Open a Pull Request
+
+<div align="center">
+
+<a href="https://makeapullrequest.com" target="blank" >![PRs Welcome](https://img.shields.io/badge/PR-Welcome-brightgreen?style=for-the-badge)</a>
+
+</div>
+
+## Licence
+
+[MIT](https://github.com/phaneendra/phaneendra.github.com/blob/source/LICENSE) © [Phaneendra](https://phaneendra.vercel.app/)

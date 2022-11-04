@@ -1,78 +1,103 @@
-// const fs = require("fs");
-// const path = require("path");
-// const { promisify } = require("util");
-// const copyFile = promisify(fs.copyFile);
-
-// plugins and configuration
-const withPlugins = require("next-compose-plugins");
-// const withFonts = require("next-fonts");
-const images = require("remark-images");
-const emoji = require("remark-emoji");
-// const withCSS = require("@zeit/next-css");
-const withOptimizedImages = require("next-optimized-images")({
-  optimizeImagesInDev: true,
-  handleImages: ["jpg", "jpeg", "png", "svg", "gif", "webp"]
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
 });
-const withMDX = require("@next/mdx")();
-const withMDXconfig = {
-  //parse mdx files
-  extension: /\.mdx?$/,
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  options: {
-    mdPlugins: [images, emoji]
-  }
-};
-// const withBundleAnalyzer = require("@zeit/next-bundle-analyzer")({
-//   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-//   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
-//   bundleAnalyzerConfig: {
-//     server: {
-//       analyzerMode: "static",
-//       reportFilename: "../bundles/server.html"
-//     },
-//     browser: {
-//       analyzerMode: "static",
-//       reportFilename: "../bundles/client.html"
-//     }
-//   }
-// });
 
-// next.js configuration
-const nextConfig = {
-  // copy static assets
-  // exportPathMap: async function(
-  //   defaultPathMap,
-  //   { dev, dir, outDir, distDir, buildId }
-  // ) {
-  //   if (dev) {
-  //     return defaultPathMap;
-  //   }
-  //   await copyFile(
-  //     path.join(dir, "src/modules/serviceworker/s-worker.js"),
-  //     path.join(outDir, "s-worker.js")
-  //   );
-  //   return defaultPathMap;
-  // },
-  // custom webpack configuration
-  webpack: function(config, { dev }) {
-    config.node = {
-      fs: "empty"
-    };
-    // // parse yaml so we can use config.yml
-    // config.module.rules.push({
-    //   test: /\.ya?ml$/,
-    //   use: "js-yaml-loader"
-    // });
+// You might need to insert additional domains in script-src if you are using external services
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+  style-src 'self' 'unsafe-inline';
+  img-src * blob: data:;
+  media-src 'none';
+  connect-src *;
+  font-src 'self';
+  frame-src giscus.app
+`;
+
+const securityHeaders = [
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\n/g, ''),
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+  {
+    key: 'Referrer-Policy',
+    value: 'strict-origin-when-cross-origin',
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  {
+    key: 'X-Frame-Options',
+    value: 'DENY',
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff',
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on',
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=31536000; includeSubDomains',
+  },
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()',
+  },
+];
+
+/**
+ * @type {import('next/dist/next-server/server/config').NextConfig}
+ **/
+module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  eslint: {
+    dirs: ['src/pages', 'src/components', 'src/lib', 'src/layouts', 'scripts'],
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ];
+  },
+  webpack: (config, { dev, isServer }) => {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|mp4)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next',
+            name: 'static/media/[name].[hash].[ext]',
+          },
+        },
+      ],
+    });
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    if (!dev && !isServer) {
+      // Replace React with Preact only in client production build
+      Object.assign(config.resolve.alias, {
+        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
+      });
+    }
+
     return config;
-  }
-};
-
-module.exports = withPlugins(
-  [[withMDX, withMDXconfig], withOptimizedImages],
-  nextConfig
-);
-
-// const withMDX = require("@next/mdx")();
-// module.exports = withMDX({
-//   pageExtensions: ["js", "mdx"]
-// });
+  },
+});

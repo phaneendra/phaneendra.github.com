@@ -1,35 +1,38 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  root: true,
+  parser: '@typescript-eslint/parser',
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+    es6: true,
+  },
+  plugins: ['@typescript-eslint'],
   extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    // 'airbnb',
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'next',
+    'next/core-web-vitals',
   ],
-  parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
-    ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
-    }
-  },
-  plugins: ["react", "jsx-a11y", "import"],
   rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-    // Next imports React into pages automatically
-    "react/react-in-jsx-scope": "off",
-    // Next includes packages like MDX using their bundle
-    "import/no-extraneous-dependencies": "off",
-    // Not necessary with Typescript
-    "react/prop-types": "off",
-    // Causes issues with arrow functions and MDX provider components
-    "react/display-name": "off"
+    'prettier/prettier': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'react/prop-types': 0,
+    'no-unused-vars': 0,
+    'react/no-unescaped-entities': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
-  settings: {
-    react: {
-      version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
-    }
-  }
 };

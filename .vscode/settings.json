@@ -1,0 +1,16 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "FiraCode NF Retina",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "workbench.settings.useSplitJSON": true,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "svg.preview.background": "custom"
+}
