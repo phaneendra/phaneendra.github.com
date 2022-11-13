@@ -26,11 +26,11 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
       <article>
         <div>
           <header>
-            <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
+            <div className="space-y-1 border-b border-border-color pb-10 text-center">
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="text-base font-medium leading-6 text-base-muted">
                     <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                 </div>
@@ -40,32 +40,23 @@ export default function PostLayout({ frontMatter, next, prev, children }: Props)
               </div>
             </div>
           </header>
-          <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 "
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+          <div className="divide-y divide-border-color pb-8 xl:divide-y-0 " style={{ gridTemplateRows: 'auto 1fr' }}>
+            <div className="divide-y divide-border-color xl:col-span-3 xl:row-span-2 xl:pb-0">
+              <div className="dark:prose-dark prose max-w-none pt-10 pb-8">{children}</div>
             </div>
             <Comments frontMatter={frontMatter} />
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/blog/${prev.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
+                    <Link href={`/blog/${prev.slug}`} className="text-primary hover:text-primary-focus">
                       &larr; {prev.title}
                     </Link>
                   </div>
                 )}
                 {next && (
                   <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/blog/${next.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
+                    <Link href={`/blog/${next.slug}`} className="text-primary hover:text-primary-focus">
                       {next.title} &rarr;
                     </Link>
                   </div>

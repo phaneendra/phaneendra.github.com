@@ -17,13 +17,21 @@ export default function remarkCodeTitles() {
         return;
       }
 
-      const className = 'remark-code-title';
+      const containerClassName = 'remark-code-title-container';
+      const titleClassName = 'remark-code-title';
 
       const titleNode = {
         type: 'mdxJsxFlowElement',
         name: 'div',
-        attributes: [{ type: 'mdxJsxAttribute', name: 'className', value: className }],
-        children: [{ type: 'text', value: title }],
+        attributes: [{ type: 'mdxJsxAttribute', name: 'className', value: containerClassName }],
+        children: [
+          {
+            type: 'mdxJsxFlowElement',
+            name: 'span',
+            attributes: [{ type: 'mdxJsxAttribute', name: 'className', value: titleClassName }],
+            children: [{ type: 'text', value: title }],
+          },
+        ],
         data: { _xdmExplicitJsx: true },
       };
 

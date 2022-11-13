@@ -12,9 +12,10 @@ import remarkGfm from 'remark-gfm';
 import remarkFootnotes from 'remark-footnotes';
 import remarkMath from 'remark-math';
 import remarkExtractFrontmatter from './remark-extract-frontmatter';
-import remarkCodeTitles from './remark-code-title';
+// import remarkCodeTitles from './remark-code-title';
 import remarkTocHeadings from './remark-toc-headings';
 import remarkImgToJsx from './remark-img-to-jsx';
+import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 // Rehype packages
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -22,6 +23,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCitation from 'rehype-citation';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypePresetMinify from 'rehype-preset-minify';
+import { rehypeMetaAttribute } from './rehype-meta-props';
 
 const root = process.cwd();
 
@@ -69,13 +71,14 @@ export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | 
         remarkExtractFrontmatter,
         [remarkTocHeadings, { exportRef: toc }],
         remarkGfm,
-        remarkCodeTitles,
+        // remarkMdxCodeMeta,
         [remarkFootnotes, { inlineNotes: true }],
         remarkMath,
         remarkImgToJsx,
       ];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
+        rehypeMetaAttribute,
         rehypeSlug,
         rehypeAutolinkHeadings,
         rehypeKatex,

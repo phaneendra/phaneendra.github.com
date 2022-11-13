@@ -1,10 +1,13 @@
 import { useState, useRef, ReactNode } from 'react';
 
 interface Props {
+  file: string;
   children: ReactNode;
 }
 
-const Pre = ({ children }: Props) => {
+const Pre = (props: Props) => {
+  console.log(props);
+  const { file, children } = props;
   const textInput = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -25,47 +28,62 @@ const Pre = ({ children }: Props) => {
   };
 
   return (
-    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
-      {hovered && (
-        <button
-          aria-label="Copy code"
-          type="button"
-          className={`absolute right-2 top-2 h-8 w-8 rounded border-2 bg-gray-700 p-1 dark:bg-gray-800 ${
-            copied ? 'border-green-400 focus:border-green-400 focus:outline-none' : 'border-gray-300'
-          }`}
-          onClick={onCopy}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            fill="none"
-            className={copied ? 'text-green-400' : 'text-gray-300'}
-          >
-            {copied ? (
-              <>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                />
-              </>
-            ) : (
-              <>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                />
-              </>
-            )}
-          </svg>
-        </button>
-      )}
+    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="px-12">
+      <div className="relative my-4 w-full flex-col rounded border border-border-color shadow">
+        {file && (
+          <div className="relative flex w-full items-center justify-start rounded-t border-b border-border-color bg-base-100 p-1">
+            <div className="flex items-center justify-center p-1">
+              <div className=" m-1 h-3 w-3 rounded-full bg-base-light" />
+              <div className=" m-1 h-3 w-3 rounded-full bg-base-light" />
+              <div className=" m-1 h-3 w-3 rounded-full bg-base-light" />
+            </div>
+            <div className="absolute left-0 flex w-full items-center justify-center">
+              <span className="filename font-sans text-sm font-bold text-base-muted">{file}</span>
+            </div>
+          </div>
+        )}
 
-      <pre>{children}</pre>
+        <pre className={`${file ? 'rounded-t-none' : 'rounded'}`}>{children}</pre>
+
+        {hovered && (
+          <button
+            aria-label="Copy code"
+            type="button"
+            className={`border-1 absolute right-0 bottom-0 h-8 w-8 rounded bg-base-100 p-1 ${
+              copied ? 'border-tip focus:border-tip-focus focus:outline-none' : 'border-border-color'
+            }`}
+            onClick={onCopy}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              fill="none"
+              className={copied ? 'text-tip' : 'text-base-muted'}
+            >
+              {copied ? (
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                  />
+                </>
+              ) : (
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </>
+              )}
+            </svg>
+          </button>
+        )}
+      </div>
     </div>
   );
 };

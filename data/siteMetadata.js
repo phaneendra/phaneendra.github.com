@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'My personal ramblings and notes about various topics I learn every day',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://phaneendra.vercel.app', // Todo: change this.
+  siteUrl: 'https://phaneendra.vercel.app',
   siteRepo: 'https://github.com/phaneendra/phaneendra.github.com',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/phaneendra.avatar.jpeg',
