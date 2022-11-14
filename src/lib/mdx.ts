@@ -12,10 +12,8 @@ import remarkGfm from 'remark-gfm';
 import remarkFootnotes from 'remark-footnotes';
 import remarkMath from 'remark-math';
 import remarkExtractFrontmatter from './remark-extract-frontmatter';
-// import remarkCodeTitles from './remark-code-title';
 import remarkTocHeadings from './remark-toc-headings';
 import remarkImgToJsx from './remark-img-to-jsx';
-import remarkMdxCodeMeta from 'remark-mdx-code-meta';
 // Rehype packages
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
