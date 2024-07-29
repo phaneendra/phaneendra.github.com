@@ -1,52 +1,130 @@
-<h1 align="center">
-  Personal Blog and Learning Notes
-</h1>
+# Personal Blog and Learning Notes
 
-<p align="center">
-  This is my personal portfolio blog and learning notes hosted <a href="https://phaneendra.vercel.app/" target="_blank">here</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a>, <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a> and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>.
-</p>
+This is my personal portfolio blog and learning notes hosted [here](https://phaneendra.pages.dev/) built with [AstroJs](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/) and hosted with [Cloudflare](https://pages.cloudflare.com/).
 
-<p align="center">
-  The original template is designed by <a href="https://github.com/timlrx" target="_blank">Timothy Lin</a> and can be found <a href="https://github.com/timlrx/tailwind-nextjs-starter-blog" target="_blank">here</a>. The demo for the same can be found <a href="https://tailwind-nextjs-starter-blog.vercel.app/" target="_blank">here</a>.
-</p>
-
-<div align="center">
+The original template is designed by <a href="https://github.com/timlrx" target="_blank">Timothy Lin</a> and can be found <a href="https://github.com/timlrx/tailwind-nextjs-starter-blog" target="_blank">here</a>. The demo for the same can be found <a href="https://tailwind-nextjs-starter-blog.vercel.app/" target="_blank">here</a>.
 
 <a href="https://phaneendra.vercel.app/" target="blank" >![View Demo](https://img.shields.io/badge/-View%20Demo%20-orange?color=%23DE1D8D&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/issues/new?assignees=&labels=bug&template=bug_report.md&title=">![Report Bug](https://img.shields.io/badge/-Report%20Bug%20-orange?color=%23ee0701&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/issues/new?assignees=&labels=&template=feature_request.md&title=">![Request Feature](https://img.shields.io/badge/-Request%20Feature%20-orange?color=%230e8a16&style=for-the-badge)</a> <a href="https://github.com/phaneendra/phaneendra.github.com/fork">![Fork](https://img.shields.io/github/forks/pycoder2000/blog?color=%23bfe5bf&style=for-the-badge)</a> <img src="https://img.shields.io/github/stars/phaneendra/phaneendra.github.com?color=darkgreen&style=for-the-badge">
 
-</div>
-
-<div align="center">
-
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
-
-</div>
 
 ## Features
 
-- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
-- Lightweight, 45kB first load JS, uses Preact in production build
-- Mobile-friendly view
-- Light and dark theme
-- Self-hosted font with [Fontsource](https://fontsource.org/)
-- Supports [plausible](https://plausible.io/), [simple analytics](https://simpleanalytics.com/) and google analytics
-- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
-- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
+- [x] Easy styling customization with [Tailwind 3.x](https://tailwindcss.com/blog/tailwindcss-v3)
+- [x] Self-hosted font with [Fontsource](https://fontsource.org/)
+- [x] [MDX - write JSX in markdown documents!](https://mdxjs.com/)
+- [] Flexible data retrieval with [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)
+- [] Mobile-friendly view
+- [] Light and dark theme
+- [] Supports [plausible](https://plausible.io/), others to consider Posthog, Umami
+- [] Preconfigured security headers
+- [] SEO friendly - astro/seo
+- [] Structured Data from frontmatter
+- [] RSS Feed
+- [] Sitemap.xml
+- [] Index Temaplate with Pinned and Latest notes
+- [] Notes templates
+- [] Tags Template with support for tags - each unique tag will be its own page
+- [] Categories and Subcategories template
+- [] Archive Page - Timeline view of all contents [TMP](https://fuwari.vercel.app/archive/)
+- [] Automatic image optimization via [astro:assets](https://docs.astro.build/en/guides/images/)
+- [] Pan and Zoom for images
+- [] Icons using [unplugin-icons](https://todo)
+- [] Icons for external links [rehypeExternalLinks](https://todo)
+- [] Auto Last modified time
+- [] Link Previews
+- [] Search using PageFind
+- [] Social Images autogeneration
+- [] Support for tag clouds on the right had side column
+- [] Server-side syntax highlighting with line numbers and line highlighting via Shiki or [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus) using Expressive code.
+- [] Anchors for Headings
+- [] resolve wikilings in markdown
+- [] TOC component
+- [] Github Repository cards [TMP](https://fuwari.vercel.app/posts/markdown-extended/)
+- [] Callouts/Admonitions - Githubflovor
+- [] Backlinks Component
+- [] Tabs Component - in Markdown
+- [] Cards Component - in Markdown
+- [] Link Cards Component
+- [] FileTree Component
+- [] Steps Component
+- [] Glossary Page
+- [] Newsletter component with support for mailchimp, buttondown, convertkit and klaviyo
+- [] Supports comments with [giscus](https://github.com/laymonage/giscus), [utterances](https://github.com/utterance/utterances) or disqus
+- [] Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
+- Projects page
 - Math display supported via [KaTeX](https://katex.org/)
 - Citation and bibliography support via [rehype-citation](https://github.com/timlrx/rehype-citation)
-- Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
-- Flexible data retrieval with [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
-- Support for tags - each unique tag will be its own page
-- Support for multiple authors
-- Blog templates
-- TOC component
-- Support for nested routing of blog posts
-- Newsletter component with support for mailchimp, buttondown, convertkit and klaviyo
-- Supports [giscus](https://github.com/laymonage/giscus), [utterances](https://github.com/utterance/utterances) or disqus
-- Projects page
-- Preconfigured security headers
-- SEO friendly with RSS feed, sitemaps and more!
+
+## Structure
+
+- assets/styles - global styles
+
+- content
+
+  - /notes -> symlinked to obsidian notes
+  - config.ts -> content collection definitions
+
+- config
+
+  - siteMetadata.ts
+
+- pages
+
+  - index.astro -> Main page
+    - MainLayout
+      - Header.astro
+        - MainNavigationMenu
+          - Logo
+          - Search
+          - ThemeToggle
+        - MobileNavigationDrawer
+          - Sidebar
+            - Profile
+            - NavLinks
+        - SidebarDesktop
+          - Profile
+          - NavLinks
+          - TagCloud
+        - Banner
+        - PinnedNotes
+        - RecentNotes
+      -
+  - notes
+    - [...slug].astro
+      - post-layout.astro (inherit from base-layout.astro)
+        - Header.astro
+          - MainNavigationMenu
+          - MobileNavigationDrawer
+            - SideBar
+              - NavLinks
+              - ContentNavigation
+        - NotesContent
+        - Copyrights Section
+        - Pagination
+        - Comments
+        - Aside
+          - TableOfContent
+          - TagCloud
+
+- layouts
+
+  - base-layout.astro -> Base layout contains the html and basic head components
+    - BaseHead.astro
+  - main-layout.astro -> Sites index page layout
+    - Header.astro
+      - MainNavigationMenu
+      - MobileNavigationDrawer
+      - Search
+      - ThemeToggle
+    - Footer.astro
+
+- components
+  - widgets
+  - ui
+  - sections
+    - Header.astro
+    - Footer.astro
 
 ## Quick Start Guide
 
@@ -76,48 +154,20 @@ npm install
 First, run the development server:
 
 ```bash
-npm start
+pnpm start
 ```
 
 or
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4321](http://localhost:4321) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `pages/index.astro`. The page auto-updates as you edit the file.
 
 ## Extend / Customize
-
-`data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
-
-`data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
-
-`data/projectsData.js` - data used to generate styled card on the projects page.
-
-`data/headerNavLinks.js` - navigation links.
-
-`data/logo.svg` - replace with your own logo.
-
-`data/blog` - replace with your own blog posts.
-
-`public/static` - store assets such as images and favicons.
-
-`tailwind.config.js` and `css/tailwind.css` - contain the tailwind stylesheet which can be modified to change the overall look and feel of the site.
-
-`css/prism.css` - controls the styles associated with the code blocks. Feel free to customize it and use your preferred prismjs theme e.g. [prism themes](https://github.com/PrismJS/prism-themes).
-
-`components/social-icons` - to add other icons, simply copy an svg file from [Simple Icons](https://simpleicons.org/) and map them in `index.js`. Other icons use [heroicons](https://heroicons.com/).
-
-`components/MDXComponents.js` - pass your own JSX code or React component by specifying it over here. You can then call them directly in the `.mdx` or `.md` file. By default, a custom link and image component is passed.
-
-`layouts` - main templates used in pages.
-
-`pages` - pages to route to. Read the [Next.js documentation](https://nextjs.org/docs) for more information.
-
-`next.config.js` - configuration related to Next.js. You need to adapt the Content Security Policy if you want to load scripts, images etc. from other domains.
 
 ## Post
 

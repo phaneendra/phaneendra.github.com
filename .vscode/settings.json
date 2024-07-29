@@ -1,7 +1,5 @@
 {
   "files.autoSave": "onFocusChange",
-  "editor.fontFamily": "FiraCode NF Retina",
-  "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "workbench.settings.useSplitJSON": true,
@@ -12,5 +10,4 @@
       "other": "on"
     }
   },
-  "svg.preview.background": "custom"
 }
