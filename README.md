@@ -207,6 +207,23 @@ canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-t
 ---
 ```
 
+### Image sizes
+
+| Type of Image    | Desktop (WxH)px | Mobile (WxH)px | Aspect ratio |
+| ---------------- | --------------- | -------------- | ------------ |
+| Product images   | 2048 x 2048     | 320 x 320      | 1:1          |
+| Banner images    | 1200 x 400      | 360 x 120      | 3:1          |
+| Image with text  | 1800 x 1000     | 360 x 240      | 9:5          |
+| Header image     | 1200 x 800      | 360 x 240      | 3:2          |
+| Blog image       | 1200 x 800      | 360 x 240      | 3:2          |
+| Featured image   | 1200 x 800      | 360 x 240      | 3:2          |
+| Logo rectangle   | 400 x 100       | 160 x 40       | 4:1          |
+| Logo square      | 100 x 100       | 60 x 60        | 1:1          |
+| Collection image | 800 x 800       | 240 x 240      | 1:1          |
+| Slideshow banner | 1920 x 1080     | 320 x 180      | 16:9         |
+| Hero image       | 1280 x 720      | 360 x 200      | 16:9         |
+| Background image | 2560 x 1400     | 360 x 640      | 16:9         |
+
 ### Compose
 
 Run `node ./scripts/compose.js` to bootstrap a new post.
